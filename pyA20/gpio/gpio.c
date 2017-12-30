@@ -143,6 +143,15 @@ static PyObject* py_init(PyObject* self, PyObject* args) {
     Py_RETURN_NONE;
 }
 
+static PyObject* py_initRPIO(PyObject* self, PyObject* args) {
+
+    if(sunxi_gpio_init_R_PIO() < 0){
+        return PyErr_SetFromErrno(PyExc_IOError);
+    }
+
+    Py_RETURN_NONE;
+}
+
 /**
  *  Set pull-up/pull-down on pin defined as input.
  * 
@@ -171,6 +180,7 @@ static PyObject* py_pullup(PyObject* self, PyObject* args) {
 /* Define module methods */
 static PyMethodDef module_methods[] = {
     {"init",    py_init,        METH_NOARGS,    "Initialize module"},
+    {"initRPIO",    py_initRPIO,        METH_NOARGS,    "Initialize module R_PIO"},
     {"setcfg",  py_setcfg,      METH_VARARGS,   "Set pin function"},
     {"getcfg",  py_getcfg,      METH_VARARGS,   "Get pin function"},
     {"output",  py_output,      METH_VARARGS,   "Set output state"},

@@ -37,7 +37,7 @@ typedef struct _pin {
 
 typedef struct _gpio {
     char connector_name[10];
-    pin_t pins[41];
+    pin_t pins[47];
 }gpio_t;
 
 
@@ -72,9 +72,14 @@ sorry My poor English
  */           
             {   "PA1",  SUNXI_GPA(1),   11 },
             {   "PA0",  SUNXI_GPA(0),   13   },
-
+            {   "PA15",  SUNXI_GPA(15),   41   },
+            {   "PG11",  SUNXI_GPG(11),   42   },
+            {   "PL11",  SUNXI_GPL(11),   43   },
+            {   "PA5",  SUNXI_GPA(5),   44   },
+            {   "PA4",  SUNXI_GPA(4),   45   },
+            {   "PA16",  SUNXI_GPA(16),   46   },
             {   "PA3",  SUNXI_GPA(3),   15   },
-            {   "PC0",  SUNXI_GPC(0),   19   },           
+            {   "PC0",  SUNXI_GPC(0),   19   },
 	    {   "PC1",  SUNXI_GPC(1),  21   },
             {   "PC2",  SUNXI_GPC(2),  23   },
             {   "PA19",  SUNXI_GPA(19),  27   },
@@ -83,7 +88,6 @@ sorry My poor English
             {   "PA9",  SUNXI_GPA(9),   33   },
             {   "PA10",  SUNXI_GPA(10),   35   },
             {   "PA20",  SUNXI_GPA(20),  37  },
-//
             {   "PA13",  SUNXI_GPA(13),  8   },
             {   "PA14",  SUNXI_GPA(14),  10  },
             {   "PD14",  SUNXI_GPD(14),   12 },
